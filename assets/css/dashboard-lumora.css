@@ -1,0 +1,106 @@
+body {
+    background: #f4f1ee;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #3B2A20;
+}
+
+.container {
+    width: 95%;
+    margin-top: 20px;
+}
+
+/* ===== HEADER ===== */
+.theme-dark {
+    background: #3B2A20;
+    color: #F7F1EA;
+}
+
+/* ===== WELCOME ===== */
+.alert-welcome {
+    background: #fff;
+    border-left: 5px solid #3B2A20;
+    border-radius: 8px;
+    padding: 18px;
+    margin-bottom: 25px;
+}
+
+/* ===== CARD STAT ===== */
+.panel-stat {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e3d9cf;
+    box-shadow: 0 6px 15px rgba(0,0,0,.05);
+    height: 120px;
+    margin-bottom: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.panel-heading-stat {
+    width: 100%;
+    padding: 15px 20px;
+}
+
+.panel-heading-stat h1 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.panel-heading-stat i {
+    font-size: 30px;
+    color: #A38A75;
+}
+
+/* ANGKA */
+.val-large {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.val-small {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* LABEL */
+.stat-label {
+    display: block;
+    margin-top: 8px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #8D7765;
+    text-transform: uppercase;
+}
+
+/* ===== TABLE ===== */
+.panel-history {
+    margin-top: 30px;
+}
+
+.table thead th {
+    background: #faf8f6;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #eee;
+}
+
+.table tbody td {
+    padding: 14px;
+}
+
+/* ===== STATUS ===== */
+.label-success {
+    background: #6d8c6d;
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+/* ===== INVOICE ===== */
+.invoice-text {
+    font-weight: bold;
+    color: #A38A75;
+}
