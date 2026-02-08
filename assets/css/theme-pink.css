@@ -1,0 +1,262 @@
+/* =========================
+   GLOBAL THEME
+   Cream • Peach • Pink
+========================= */
+
+body{
+    background:#f7f3ee;
+    font-family:'Segoe UI', sans-serif;
+    color:#6b4b47;
+}
+
+/* ===== PANEL / CARD ===== */
+.panel,
+.main-card{
+    border:none;
+    border-radius:18px;
+    box-shadow:0 12px 30px rgba(0,0,0,.06);
+    overflow:hidden;
+    background:#ffffff;
+}
+
+/* ===== HEADER ===== */
+.panel-heading,
+.card-header{
+    background:#f6b7c5;
+    border:none;
+    padding:22px;
+}
+
+.panel-heading h4,
+.card-header h4{
+    color:#ffffff;
+    font-weight:600;
+    margin:0;
+    letter-spacing:.5px;
+}
+
+/* ===== BODY ===== */
+.panel-body,
+.card-body{
+    padding:30px;
+}
+
+/* ===== FORM ===== */
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label,
+.form-label{
+    font-weight:600;
+    color:#8b5e5a;
+    font-size:13px;
+    text-transform:uppercase;
+    margin-bottom:6px;
+}
+
+.form-control{
+    border-radius:12px;
+    border:1px solid #e8dcd7;
+    padding:12px 14px;
+    height:46px;
+    transition:.3s;
+}
+
+.form-control:focus{
+    border-color:#f2a7b5;
+    box-shadow:0 0 0 3px rgba(242,167,181,.25);
+    outline:none;
+}
+
+/* ===== TABLE ===== */
+.table thead th{
+    background:#fff1f4;
+    border:none;
+    font-size:12px;
+    letter-spacing:.5px;
+    color:#8b5e5a;
+}
+
+.table tbody td{
+    border-top:1px solid #f3e4de;
+    vertical-align:middle;
+}
+
+/* ===== BUTTON ===== */
+.btn-primary,
+.btn-save,
+.btn-update{
+    background:#f2a7b5;
+    border:none;
+    border-radius:30px;
+    padding:10px 22px;
+    font-weight:600;
+    color:#ffffff;
+    box-shadow:0 6px 18px rgba(242,167,181,.45);
+    transition:.3s;
+}
+
+.btn-primary:hover,
+.btn-save:hover,
+.btn-update:hover{
+    background:#ec93a6;
+    color:#ffffff;
+    transform:translateY(-2px);
+}
+
+/* ===== BUTTON SECONDARY ===== */
+.btn-default,
+.btn-back{
+    border-radius:30px;
+    border:1px solid #f2a7b5;
+    color:#f2a7b5;
+    background:#fff;
+    transition:.3s;
+}
+
+.btn-default:hover,
+.btn-back:hover{
+    background:#f2a7b5;
+    color:#ffffff;
+}
+
+/* ===== ALERT ===== */
+.alert-soft{
+    background:#fff6f8;
+    border-left:4px solid #f2a7b5;
+    color:#8b5e5a;
+}
+/* Lebarin area konten */
+.container {
+    width: 92%;
+    max-width: 1400px;
+}
+
+/* Lebarin panel utama */
+.panel {
+    border-radius: 22px;
+    box-shadow: 0 18px 40px rgba(246,183,197,0.25);
+}
+
+/* Lebarin tabel biar napas */
+.table thead th,
+.table tbody td {
+    padding-left: 22px;
+    padding-right: 22px;
+}
+
+/* Opsi kolom biar nggak sempit */
+.table th.text-center,
+.table td.text-center {
+    white-space: nowrap;
+}
+
+/* Perbaikan alert status agar tidak kepotong */
+.alert-info{
+    padding:18px 20px;
+    overflow: visible;
+}
+
+/* Select khusus status */
+.alert-info .form-control{
+    height:auto;
+    min-height:44px;
+    padding:10px 14px;
+}
+
+/* Label di dalam alert */
+.alert-info label{
+    display:block;
+    margin-bottom:8px;
+}
+
+/* =========================
+   FIX STATUS AKSES AREA
+========================= */
+.alert-soft{
+    background:#fff6f8;
+    border-left:4px solid #f2a7b5;
+    padding:14px 18px;
+    border-radius:14px;
+    margin-bottom:22px;
+}
+
+/* Label status */
+.alert-soft .form-label{
+    margin-bottom:8px;
+    display:block;
+}
+
+/* Select status biar sejajar */
+.alert-soft select.form-control{
+    height:44px;
+    border-radius:12px;
+    padding:8px 14px;
+    border:1px solid #e8dcd7;
+    background:#ffffff;
+}
+
+/* =========================
+   FIX BUTTON AREA
+========================= */
+.btn-save{
+    height:46px;
+    font-size:14px;
+    letter-spacing:.5px;
+}
+
+.btn-back{
+    margin-top:12px;
+    height:46px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* Hilangkan outline aneh */
+select:focus,
+button:focus{
+    outline:none !important;
+}
+
+/* =========================
+   PERSEMPIT AREA FORM
+========================= */
+
+/* Container jangan terlalu melebar */
+.containera{
+    max-width: 980px;
+    width: 92%;
+}
+
+/* Card / panel jangan kepanjangan */
+.main-card,
+.panel{
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Form group lebih rapat */
+.form-group{
+    margin-bottom:14px;
+}
+
+/* Input & select lebih ramping */
+.form-control{
+    height:42px;
+    padding:8px 12px;
+    font-size:14px;
+}
+
+/* Area status jangan kebesaran */
+.alert-soft{
+    padding:12px 14px;
+}
+
+/* Tombol lebih proporsional */
+.btn-save,
+.btn-back{
+    height:42px;
+    font-size:13.5px;
+}

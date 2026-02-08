@@ -1,88 +1,148 @@
 <?php include 'header.php'; ?>
 
 <style>
-    body {
-        background: #fcfaf8;
-        font-family: Arial, sans-serif;
-    }
+body {
+    background: linear-gradient(180deg,#FFF8F3,#FCFAF8);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #5A3B33;
+}
 
-    .container {
-        width: 95% !important;
-        max-width: none !important;
-        margin-top: 20px;
-    }
+.container {
+    width: 95%;
+    margin-top: 28px;
+}
 
-    .panel {
-        border-radius: 8px !important;
-        border: 1px solid #ddd !important;
-        box-shadow: none !important;
-        margin-bottom: 20px;
-    }
+.panel {
+    background: #FFFFFF;
+    border-radius: 22px;
+    border: none;
+    box-shadow: 0 18px 40px rgba(246,183,197,0.25);
+    overflow: hidden;
+}
 
-    .panel-heading {
-        background: #3B2A20 !important;
-        color: #fff !important;
-        padding: 15px 20px !important;
-    }
+.panel-heading {
+    background: linear-gradient(135deg,#F6B7C5,#F5C6A8);
+    color: #fff;
+    padding: 24px 30px;
+}
 
-    .panel-body {
-        padding: 20px !important;
-    }
+.panel-heading h4 {
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+}
 
-    .table {
-        width: 100%;
-        margin-top: 10px;
-    }
+.panel-body {
+    padding: 32px;
+}
 
-    .table thead th {
-        background: #f5f5f5;
-        color: #333;
-        font-size: 14px;
-        padding: 12px !important;
-        border-bottom: 2px solid #eee !important;
-    }
+.btn-add {
+    background: linear-gradient(135deg,#F6B7C5,#EFA5B7);
+    color: #fff;
+    padding: 11px 26px;
+    border-radius: 28px;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 8px 18px rgba(246,183,197,0.45);
+}
 
-    .table tbody td {
-        padding: 12px !important;
-        border-top: 1px solid #eee !important;
-        font-size: 14px;
-        vertical-align: middle !important;
-    }
+.btn-add:hover {
+    background: linear-gradient(135deg,#EFA5B7,#E39AAE);
+    color: #fff;
+}
 
-    .btn-info {
-        color: #fff !important;
-        background-color: #A68B77 !important; /* Cokelat susu Lumora */
-        border-color: #8E735B !important;
-        font-weight: 600 !important;
-        text-shadow: none !important;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
-    }
+.table {
+    background: #FFFFFF;
+    border-radius: 18px;
+    overflow: hidden;
+    margin-top: 18px;
+}
 
-    .btn-info:hover, 
-    .btn-info:focus, 
-    .btn-info:active, 
-    .btn-info.active,
-    .btn-info:active:hover,
-    .btn-info:active:focus {
-        color: #fff !important;
-        background-color: #8E735B !important; /* Cokelat lebih gelap */
-        border-color: #7A624E !important;
-        outline: none !important;
-    }
+.table thead th {
+    background: #FFF1F4;
+    color: #6B3A2C;
+    font-size: 11.5px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 16px;
+    border-bottom: 1px solid #F1D8D2;
+}
 
-    .btn-info i {
-        color: #fff !important;
-    }
+.table tbody td {
+    border-top: 1px solid #F3E4DE;
+    color: #5A3B33;
+    padding: 18px 16px;
+    vertical-align: middle;
+    font-size: 14px;
+}
 
-    .stok-habis {
-        color: #d9534f;
-        font-weight: bold;
-    }
+.table tbody tr:hover {
+    background: #FFF6F1;
+}
 
-    .font-cuy {
-        margin:0; 
-        font-weight: 600;
-    }
+.password {
+    max-width: 420px;
+    font-family: monospace;
+    font-size: 13px;
+    color: #A0897D;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.label {
+    padding: 7px 18px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.label-primary {
+    background: #F6B7C5;
+    color: #6B2F3A;
+}
+
+.label-warning {
+    background: #F3C3A3;
+    color: #6B3E2E;
+}
+
+.label-default {
+    background: #E0D6CF;
+    color: #5A3B33;
+}
+
+.btn-xs {
+    padding: 8px 18px;
+    border-radius: 22px;
+    font-size: 12px;
+    border: none;
+}
+
+.btn-info {
+    background: #F6B7C5;
+    color: #fff;
+}
+
+.btn-info:hover {
+    background: #EFA5B7;
+    color: #fff;
+}
+
+.btn-danger {
+    background: #E05656;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background: #C84545;
+}
+
+.font-cuy {
+    margin: 0;
+    font-weight: 600;
+}
 </style>
 
 <div class="container">
@@ -92,9 +152,9 @@
         </div>
         <div class="panel-body">
             <div class="row">
-                <div class="col-md-12">
-                    <a href="produk_tambah.php" class="btn btn-info pull-left">
-                        <i class="fa fa-plus"></i>  Transaksi Baru
+                <div class="col-md-6">
+                    <a href="produk_tambah.php" class="btn btn-add">
+                        <i class="fa fa-user-plus"></i> Tambah Produk
                     </a>
                 </div>
             </div>
@@ -131,13 +191,11 @@
                                     <?php echo $d['stok']; ?>
                                 </td>
                                 <td class="text-center">
-                                    <a href="produk_edit.php?id_barang=<?php echo $d['id_barang']; ?>" class="btn btn-xs btn-info">
-                                        <i class="fa fa-edit"></i> Edit
+                                    <a href="produk_edit.php?id=<?php echo $d['id_barang']; ?>" class="btn btn-xs btn-warning">
+                                        <i class="fa fa-edit"></i>
                                     </a>
-                                    <a onclick="return confirm('Hapus produk ini?')" 
-                                       href="produk_hapus.php?id_barang=<?php echo $d['id_barang']; ?>" 
-                                       class="btn btn-xs btn-danger">
-                                        <i class="fa fa-trash"></i> Hapus
+                                    <a href="produk_hapus.php?id=<?php echo $d['id_barang']; ?>" class="btn btn-xs btn-info">
+                                        <i class="fa fa-trash"></i>
                                     </a>
                                 </td>
                             </tr>
@@ -150,5 +208,7 @@
         </div>
     </div>
 </div>
+
+<br><br><br>
 
 <?php include 'footer.php'; ?>

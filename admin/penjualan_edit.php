@@ -30,98 +30,151 @@ function dropdown_barang($barang, $selected){
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-    body { 
-        background-color: #f8f9fa; 
-        font-family: 'Inter', sans-serif;
-        color: #333;
-    }
-    
-    .main-card {
-        background: #ffffff;
-        border: none;
-        border-radius: 16px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        margin-top: 50px;
-        margin-bottom: 50px;
-        overflow: hidden;
-    }
+body{
+    background:#f7f3ee;
+    font-family:'Inter', sans-serif;
+    color:#5a3b33;
+}
 
-    .card-header {
-        background: linear-gradient(135deg, #5d4037 0%, #8d6e63 100%);
-        padding: 20px 25px;
-        color: white;
-        border: none;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+.main-card{
+    background:#ffffff;
+    border-radius:18px;
+    box-shadow:0 14px 35px rgba(0,0,0,.06);
+    margin:50px 0;
+    overflow:hidden;
+}
 
-    .card-header h4 { margin: 0; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+.card-header{
+    background:#f6b7c5;
+    padding:22px 26px;
+    color:#ffffff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
-    .card-body { padding: 40px; }
+.card-header h4{
+    margin:0;
+    font-weight:600;
+    letter-spacing:.5px;
+}
 
-    .form-label {
-        font-weight: 600;
-        color: #5d4037;
-        margin-bottom: 8px;
-        font-size: 13px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
+.card-body{
+    padding:38px;
+}
 
-    .form-control {
-        border-radius: 8px;
-        border: 1px solid #e0e0e0;
-        padding: 10px 15px;
-        transition: all 0.3s ease;
-        height: auto;
-    }
+.form-label{
+    font-weight:600;
+    color:#8b5e5a;
+    font-size:12px;
+    text-transform:uppercase;
+    margin-bottom:6px;
+}
 
-    .form-control:focus {
-        border-color: #8d6e63;
-        box-shadow: 0 0 0 3px rgba(141, 110, 99, 0.1);
-        outline: none;
-    }
+.form-control{
+    border-radius:12px;
+    border:1px solid #ead9d3;
+    padding:11px 14px;
+    transition:.3s;
+}
 
-    .btn-back {
-        background: rgba(255,255,255,0.2);
-        color: white;
-        border: 1px solid rgba(255,255,255,0.4);
-        padding: 6px 15px;
-        border-radius: 6px;
-        font-size: 13px;
-        transition: 0.3s;
-    }
+.form-control:focus{
+    border-color:#f2a7b5;
+    box-shadow:0 0 0 3px rgba(242,167,181,.25);
+}
 
-    .btn-back:hover { background: white; color: #5d4037; text-decoration: none; }
+.btn-back{
+    background:rgba(255,255,255,.35);
+    color:#ffffff;
+    border:none;
+    padding:7px 16px;
+    border-radius:20px;
+    font-size:13px;
+}
 
-    .btn-update {
-        background: #5d4037;
-        color: white;
-        border: none;
-        padding: 15px;
-        border-radius: 10px;
-        font-weight: 600;
-        width: 100%;
-        margin-top: 25px;
-        box-shadow: 0 4px 15px rgba(93, 64, 55, 0.2);
-        transition: 0.3s;
-    }
+.btn-back:hover{
+    background:#ffffff;
+    color:#8b5e5a;
+    text-decoration:none;
+}
 
-    .btn-update:hover { background: #4e342e; transform: translateY(-2px); color: white; }
+.table-custom{
+    margin-top:20px;
+    border-collapse:separate;
+    border-spacing:0 12px;
+}
 
-    .table-custom { margin-top: 15px; border: 1px solid #eee; border-radius: 10px; overflow: hidden; }
-    .table-custom thead { background: #fdfaf7; }
-    .table-custom thead th { border: none; color: #5d4037; padding: 15px; font-size: 13px; }
-    .table-custom tbody td { padding: 12px; vertical-align: middle; border-top: 1px solid #f5f5f5; }
+.table-custom thead th{
+    border:none;
+    color:#8b5e5a;
+    font-size:12px;
+    padding:12px 14px;
+}
 
-    .alert-soft {
-        background: #fdfaf7;
-        border-left: 4px solid #8d6e63;
-        color: #5d4037;
-        padding: 15px;
-        margin-bottom: 20px;
-    }
+.table-custom tbody tr{
+    background:#fff7f3;
+    border-radius:14px;
+    box-shadow:0 6px 16px rgba(0,0,0,.05);
+}
+
+.table-custom tbody td{
+    border:none;
+    padding:14px;
+}
+
+.table-custom tbody tr td:first-child{
+    border-radius:14px 0 0 14px;
+}
+
+.table-custom tbody tr td:last-child{
+    border-radius:0 14px 14px 0;
+}
+
+.alert-soft{
+    background:#fff1ec;
+    border-left:4px solid #f2a7b5;
+    color:#8b5e5a;
+    padding:14px 18px;
+    border-radius:12px;
+    margin-top:18px;
+}
+
+.btn-update{
+    background:#f2a7b5;
+    color:#ffffff;
+    border:none;
+    padding:14px;
+    border-radius:30px;
+    font-weight:600;
+    width:100%;
+    margin-top:26px;
+    box-shadow:0 8px 22px rgba(242,167,181,.45);
+    transition:.3s;
+}
+
+.btn-update:hover{
+    background:#ec93a6;
+}
+
+.form-control{
+    height:48px;
+    padding:10px 16px;
+    line-height:1.4;
+    font-size:14px;
+    border-radius:14px;
+    border:1px solid #ead9d3;
+    display:flex;
+    align-items:center;
+}
+
+select.form-control{
+    padding-right:40px;
+    line-height:normal;
+}
+
+input[type="date"].form-control{
+    line-height:normal;
+}
 </style>
 
 <div class="container">
@@ -130,7 +183,9 @@ function dropdown_barang($barang, $selected){
             <div class="main-card">
                 <div class="card-header">
                     <h4><i class="fa fa-edit"></i> Edit Penjualan</h4>
-                    <a href="penjualan.php" class="btn-back"><i class="fa fa-arrow-left"></i> Kembali</a>
+                    <a href="penjualan.php" class="btn-back">
+                        <i class="fa fa-arrow-left"></i> Kembali
+                    </a>
                 </div>
 
                 <div class="card-body">
@@ -149,12 +204,10 @@ function dropdown_barang($barang, $selected){
                                     <label class="form-label">Kasir Terpilih</label>
                                     <select name="user_id" class="form-control" required>
                                         <option value="">- Pilih Kasir -</option>
-                                        <?php
-                                        foreach($kasir as $k){
+                                        <?php foreach($kasir as $k){
                                             $sel = ($k['user_id'] == $p['user_id']) ? "selected" : "";
                                             echo "<option value='{$k['user_id']}' $sel>{$k['user_nama']}</option>";
-                                        }
-                                        ?>
+                                        } ?>
                                     </select>
                                 </div>
                             </div>
@@ -169,9 +222,9 @@ function dropdown_barang($barang, $selected){
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php for($i=0; $i<6; $i++): 
-                                        $selected_id = isset($details[$i]['id_barang']) ? $details[$i]['id_barang'] : '';
-                                        $jumlah = isset($details[$i]['jumlah']) ? $details[$i]['jumlah'] : '';
+                                    <?php for($i=0; $i<6; $i++):
+                                        $selected_id = $details[$i]['id_barang'] ?? '';
+                                        $jumlah = $details[$i]['jumlah'] ?? '';
                                     ?>
                                     <tr>
                                         <td>

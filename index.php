@@ -3,250 +3,273 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Lumora</title>
+  <title>Login Kasir - Lumora Aromatherapy</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     :root {
-      --main-color: #C2B4A3;   
-      --dark-color: #9E8F7D;    
-      --bg-soft: #F5F1EB;      
-      --text-dark: #4E443B;     
-      --text-gray: #7A6F63;    
+      --primary: #FF8DAA; 
+      --secondary: #FFB891; 
+      --bg-soft: #FFF5F2; 
+      --text-main: #5A3B3B; 
+      --text-light: #A08585;
     }
 
-    * {
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+    * { box-sizing: border-box; font-family: 'Poppins', sans-serif; }
 
     body {
       margin: 0;
-      background: var(--bg-soft);
+      background-color: var(--bg-soft);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(255, 141, 170, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(255, 184, 145, 0.2) 0px, transparent 50%);
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-    }
-
-    .login-container {
-      display: flex;
-      width: 1000px;
-      height: 600px;
-      background: #fff;
-      border-radius: 22px;
       overflow: hidden;
-      box-shadow: 0 30px 60px rgba(120, 100, 80, 0.35);
     }
 
-    /* LEFT IMAGE */
-    .image-side {
-      position: relative;
-      width: 50%;
-      background: url('https://images.unsplash.com/photo-1602874801007-bd458bb1b8b6?auto=format&fit=crop&q=80&w=1000') center/cover no-repeat;
+    .login-card {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      text-align: center;
+      width: 850px;
+      height: 520px;
+      background: #fff;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 40px 100px rgba(212, 140, 140, 0.15);
+      position: relative;
     }
 
-    .image-side::before {
+    /* KIRI: Menggunakan Gambar Lilin sebagai Background */
+    .brand-side {
+      width: 40%;
+      /* Menggunakan gambar lilin estetik dari Unsplash */
+      background: url('https://images.unsplash.com/photo-1602874801007-bd458bb1b8b6?q=80&w=1000&auto=format&fit=crop') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      position: relative;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Overlay Gelap/Gradasi agar teks putih tetap terlihat jelas */
+    .brand-side::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(92, 74, 55, 0.45);
-    }
-
-    .image-content {
-      position: relative;
+      background: linear-gradient(160deg, rgba(255, 141, 170, 0.6), rgba(90, 59, 59, 0.7));
       z-index: 1;
     }
 
-    .image-content h1 {
-      font-size: 3rem;
-      letter-spacing: 4px;
-      margin-bottom: 10px;
-      text-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    /* Memastikan konten berada di atas overlay */
+    .brand-side i, 
+    .brand-side h1, 
+    .brand-side p {
+      position: relative;
+      z-index: 2;
     }
 
-    .image-content p {
-      font-size: 0.95rem;
-      opacity: 0.9;
+    .brand-side i {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
     }
+
+    .brand-side h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin: 0;
+      letter-spacing: 4px;
+      text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .brand-side p {
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      opacity: 0.95;
+      margin-top: 10px;
+      font-weight: 400;
+    }
+
+    /* KANAN: Bagian Form */
     .form-side {
-      width: 50%;
+      width: 60%;
       padding: 60px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-    }
-
-    .form-header {
-      margin-bottom: 35px;
-    }
-
-    .form-header h2 {
-      margin: 0;
-      font-size: 1.9rem;
-      color: var(--text-dark);
-    }
-
-    .form-header p {
-      margin-top: 6px;
-      font-size: 0.9rem;
-      color: var(--text-gray);
-    }
-
-    .input-group {
-      margin-bottom: 25px;
+      background: #fff;
       position: relative;
     }
 
-    .input-group label {
+    .header-text { margin-bottom: 45px; }
+
+    .header-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--text-main);
+      margin: 0;
+    }
+
+    .header-text p {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-top: 5px;
+    }
+
+    .header-text .line {
+      width: 40px;
+      height: 3px;
+      background: var(--secondary);
+      margin-top: 12px;
+      border-radius: 2px;
+    }
+
+    .input-box {
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .input-box i {
+      position: absolute;
+      right: 5px;
+      top: 15px;
+      color: #F0E0DB;
+      font-size: 0.9rem;
+    }
+
+    .input-box input {
+      width: 100%;
+      padding: 15px 0;
+      border: none;
+      border-bottom: 2px solid #F0E0DB;
+      background: transparent;
+      font-size: 1rem;
+      color: var(--text-main);
+      transition: all 0.4s ease;
+      outline: none;
+    }
+
+    .input-box label {
+      position: absolute;
+      top: 15px;
+      left: 0;
+      color: var(--text-light);
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .input-box input:focus ~ label,
+    .input-box input:valid ~ label {
+      top: -12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .input-box input:focus {
+      border-bottom-color: var(--primary);
+    }
+
+    .input-box .focus-border {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary);
+      transition: 0.4s;
+    }
+
+    .input-box input:focus ~ .focus-border {
+      width: 100%;
+    }
+
+    .btn-submit {
+      margin-top: 15px;
+      padding: 16px 25px;
+      border: none;
+      border-radius: 50px;
+      background: var(--text-main);
+      color: #fff;
       font-size: 0.85rem;
       font-weight: 600;
-      color: var(--text-dark);
-      margin-bottom: 8px;
-      display: block;
-    }
-
-    .input-group input {
-      width: 100%;
-      padding: 14px 15px 14px 45px;
-      border-radius: 12px;
-      border: 1.5px solid #D9CEC2;
-      background: #FFFDF9;
-      font-size: 0.9rem;
-      outline: none;
-      transition: 0.3s;
-    }
-
-    .input-group input:focus {
-      border-color: var(--dark-color);
-      background: #fff;
-    }
-
-    .input-group i {
-      position: absolute;
-      left: 16px;
-      top: 43px;
-      color: var(--text-gray);
-    }
-
-    .extra-options {
+      letter-spacing: 1.5px;
+      cursor: pointer;
+      transition: 0.4s;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.85rem;
-      color: var(--text-gray);
-      margin-bottom: 30px;
+      box-shadow: 0 10px 20px rgba(90, 59, 59, 0.15);
     }
 
-    .extra-options a {
-      text-decoration: none;
-      color: var(--text-gray);
+    .btn-submit:hover {
+      background: var(--primary);
+      box-shadow: 0 15px 30px rgba(255, 141, 170, 0.3);
+      transform: translateY(-3px);
     }
 
-    .extra-options a:hover {
-      text-decoration: underline;
+    .btn-submit i {
+      background: rgba(255,255,255,0.2);
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 0.8rem;
     }
 
-    .btn-login {
-      width: 100%;
-      padding: 15px;
-      border-radius: 14px;
-      border: none;
-      background: var(--main-color);
-      color: #fff;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.3s;
-      box-shadow: 0 10px 25px rgba(158, 143, 125, 0.45);
-    }
-
-    .btn-login:hover {
-      background: var(--dark-color);
-      transform: translateY(-1px);
-    }
-
-    .footer-text {
-      margin-top: 30px;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-gray);
-    }
-
-    .footer-text a {
-      color: var(--dark-color);
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .footer-text a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 900px) {
-      .login-container {
-        flex-direction: column;
-        height: auto;
-      }
-
-      .image-side {
-        width: 100%;
-        height: 220px;
-      }
-
-      .form-side {
-        width: 100%;
-        padding: 40px 25px;
-      }
+    @media (max-width: 850px) {
+      .login-card { width: 90%; flex-direction: column; height: auto; border-radius: 30px; }
+      .brand-side { width: 100%; padding: 60px 20px; height: 250px; }
+      .form-side { width: 100%; padding: 40px 30px; }
     }
   </style>
 </head>
-
 <body>
 
-  <div class="login-container">
-
-    <!-- IMAGE -->
-    <div class="image-side">
-      <div class="image-content">
-        <h1>LUMORA</h1>
-        <p>Each item is designed to bring warmth and peace into your space.</p>
-      </div>
+  <div class="login-card">
+    <div class="brand-side">
+      <h1>Lumora</h1>
+      <p>Aromatherapy & Co.</p>
     </div>
 
-    <!-- FORM -->
     <div class="form-side">
-      <div class="form-header">
-        <h2>Welcome Back</h2>
-        <p>Masuk untuk menikmati ketenangan aroma</p>
+      <div class="header-text">
+        <h2>Sistem Transaksi Lumora</h2>
+        <p>Silahkan login untuk mengelola pesanan.</p>
+        <div class="line"></div>
       </div>
 
-      <form action="login_cek.php" method="POST">
-
-        <div class="input-group">
+      <form action="login_cek.php" method="POST" style="position: relative; z-index: 1;">
+        <div class="input-box">
+          <input type="text" name="username" required autocomplete="off">
           <label>Username</label>
-          <input type="text" name="username" placeholder="Masukkan username" required>
-          <i class="fa-solid fa-user"></i>
+          <i class="fa-solid fa-user-tag"></i>
+          <span class="focus-border"></span>
         </div>
 
-        <div class="input-group">
+        <div class="input-box">
+          <input type="password" name="password" required>
           <label>Password</label>
-          <input type="password" name="password" placeholder="Masukkan password" required>
           <i class="fa-solid fa-lock"></i>
+          <span class="focus-border"></span>
         </div>
 
-        <button type="submit" class="btn-login">Login</button>
+        <button type="submit" class="btn-submit">
+          <span>   MASUK  </span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
       </form>
-
     </div>
-
   </div>
 
 </body>

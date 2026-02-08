@@ -1,132 +1,188 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Sistem Informasi Laundry</title>
+    <title>Invoice Cetak | The Lumora Co</title>
 
-<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
-<script type="text/javascript" src="../assets/js/jquery.js"></script>
-<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
 
+    <style>
+        body {
+            background: #fff;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .invoice-print {
+            border: 2px solid #f3c6c6;
+            padding: 30px;
+            border-radius: 18px;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px dashed #f3c6c6;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .header h2 {
+            margin: 0;
+            color: #d46a7e;
+            letter-spacing: 2px;
+        }
+
+        .header p {
+            margin: 4px 0 0;
+            color: #a87c7c;
+            font-size: 13px;
+        }
+
+        .info-table th {
+            width: 30%;
+            color: #9a5a5a;
+        }
+
+        .table th {
+            background: #fde8e3 !important;
+            border-color: #f3c6c6 !important;
+        }
+
+        .table td {
+            border-color: #f3c6c6 !important;
+        }
+
+        .total-box {
+            background: #fde8e3;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: right;
+            font-size: 17px;
+            font-weight: bold;
+            color: #8a3b3b;
+        }
+
+        .status {
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            color: #fff;
+        }
+
+        .status-selesai { background: #7ac77a; }
+        .status-gagal { background: #e25d5d; }
+
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            font-style: italic;
+            color: #9a7a7a;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+            }
+        }
+    </style>
 </head>
+
 <body>
-<?php 
+
+<?php
 session_start();
-if($_SESSION['status']!="login"){
-	header("location:../index.php?pesan=belum_login");
+if ($_SESSION['status'] != "login") {
+    header("location:../index.php?pesan=belum_login");
+    exit;
 }
-?>
 
-
-<?php 
 include '../koneksi.php';
+
+$id = $_GET['id'];
+
+$query = mysqli_query($koneksi, "
+    SELECT 
+        penjualan.id_jual,
+        penjualan.tgl_jual,
+        penjualan.jumlah,
+        penjualan.status,
+        user.user_nama,
+        barang.nama_barang,
+        barang.harga_jual,
+        (barang.harga_jual * penjualan.jumlah) AS total_akhir
+    FROM penjualan
+    INNER JOIN user ON penjualan.user_id = user.user_id
+    INNER JOIN barang ON penjualan.id_barang = barang.id_barang
+    WHERE penjualan.id_jual = '$id'
+");
+
+$d = mysqli_fetch_assoc($query);
 ?>
+
 <div class="container">
-	
-	<div class="col-md-10 col-md-offset-1">								
-		<?php 
-		
-		$id = $_GET['id'];
+    <div class="col-md-10 col-md-offset-1 invoice-print">
 
-		$transaksi = mysqli_query($koneksi,"select * from transaksi,pelanggan where transaksi_id='$id' and transaksi_pelanggan=pelanggan_id");
-		while($t=mysqli_fetch_array($transaksi)){
-			?>
-			<center><h2>LAUNDRY "Cotton Moon Laundry"</h2></center>
-			<h3>INVOICE-<?php echo $t['transaksi_id']; ?></h3>
+        <div class="header">
+            <h2>THE LUMORA CO</h2>
+            <p>Aromatherapy • Soft Glow • Comfort</p>
+        </div>
 
-			
-			<br/>
-			
-			<table class="table">
-				<tr>
-					<th width="20%">Tgl. Laundry</th>
-					<th>:</th>
-					<td><?php echo $t['transaksi_tgl']; ?></td>
-				</tr>
-				<tr>
-					<th>Nama Pelanggan</th>
-					<th>:</th>
-					<td><?php echo $t['pelanggan_nama']; ?></td>
-				</tr>
-				<tr>
-					<th>HP</th>
-					<th>:</th>
-					<td><?php echo $t['pelanggan_hp']; ?></td>
-				</tr>
-				<tr>
-					<th>Alamat</th>
-					<th>:</th>
-					<td><?php echo $t['pelanggan_alamat']; ?></td>
-				</tr>
-				<tr>
-					<th>Berat Cucian (Kg)</th>
-					<th>:</th>
-					<td><?php echo $t['transaksi_berat']; ?></td>
-				</tr>
-				<tr>
-					<th>Tgl. Selesai</th>
-					<th>:</th>
-					<td><?php echo $t['transaksi_tgl_selesai']; ?></td>
-				</tr>
-				<tr>
-					<th>Status</th>
-					<th>:</th>
-					<td>
-						<?php 
-						if($t['transaksi_status']=="0"){
-							echo "<div class='label label-warning'>PROSES</div>";
-						}else if($t['transaksi_status']=="1"){
-							echo "<div class='label label-info'>DI CUCI</div>";
-						}else if($t['transaksi_status']=="2"){
-							echo "<div class='label label-success'>SELESAI</div>";
-						} 
-						?>		
-					</td>
-				</tr>
-				<tr>
-					<th>Harga</th>
-					<th>:</th>
-					<td><?php echo "Rp. ".number_format($t['transaksi_harga'])." ,-"; ?></td>
-				</tr>
-			</table>
+        <table class="table info-table">
+            <tr>
+                <th>Invoice</th>
+                <td>INV-<?php echo $d['id_jual']; ?></td>
+            </tr>
+            <tr>
+                <th>Tanggal</th>
+                <td><?php echo date('d F Y', strtotime($d['tgl_jual'])); ?></td>
+            </tr>
+            <tr>
+                <th>Kasir</th>
+                <td><?php echo $d['user_nama']; ?></td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>
+                    <?php
+                    if ($d['status'] == "Selesai") {
+                        echo "<span class='status status-selesai'>SELESAI</span>";
+                    } else {
+                        echo "<span class='status status-gagal'>GAGAL</span>";
+                    }
+                    ?>
+                </td>
+            </tr>
+        </table>
 
-			<br/>
+        <h4 style="color:#9a5a5a;">Detail Produk</h4>
 
-			<h4>Daftar Cucian</h4>
-			<table class="table table-bordered table-striped">
-				<tr>
-					<th>Jenis Pakaian</th>
-					<th width="20%">Jumlah</th>
-				</tr>		
+        <table class="table table-bordered">
+            <tr>
+                <th>Produk</th>
+                <th class="text-center">Jumlah</th>
+                <th class="text-right">Harga</th>
+                <th class="text-right">Subtotal</th>
+            </tr>
+            <tr>
+                <td><?php echo $d['nama_barang']; ?></td>
+                <td class="text-center"><?php echo $d['jumlah']; ?></td>
+                <td class="text-right">Rp <?php echo number_format($d['harga_jual']); ?></td>
+                <td class="text-right"><b>Rp <?php echo number_format($d['total_akhir']); ?></b></td>
+            </tr>
+        </table>
 
-				<?php 
-				
-				$id = $t['transaksi_id'];
+        <div class="total-box">
+            Total Bayar : Rp <?php echo number_format($d['total_akhir']); ?>
+        </div>
 
-				$pakaian = mysqli_query($koneksi,"select * from pakaian where pakaian_transaksi='$id'");
+        <div class="footer">
+            "Terima kasih telah mempercayakan pilihan Anda pada The Lumora Co"
+        </div>
 
-				while($p=mysqli_fetch_array($pakaian)){
-					?>					
-					<tr>
-						<td><?php echo $p['pakaian_jenis']; ?></td>
-						<td width="5%"><?php echo $p['pakaian_jumlah']; ?></td>
-					</tr>
-					<?php } ?>							
-				</table>
+    </div>
+</div>
 
-				<br/>
-				<p><center><i>" Terima kasih telah mempercayakan cucian anda pada kami ".</i></center></p>
-
-				<?php 
-			}
-			?>
-		</div>
-
-
-	</div>
-
-	<script type="text/javascript">
-		window.print();
-	</script>
+<script>
+    window.print();
+</script>
 
 </body>
 </html>
