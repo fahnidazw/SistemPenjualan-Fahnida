@@ -1,0 +1,144 @@
+/* File: assets/css/dashboard-kasir.css */
+
+body { 
+    background: linear-gradient(180deg, #FFF8F5, #F4EFEA); 
+    font-family: 'Inter', sans-serif; 
+    color: #5A3A32;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container { 
+    width: 92% !important; 
+    margin-top: 30px; 
+    padding-bottom: 50px; 
+}
+
+/* Welcome Section */
+.welcome-bg {
+    background: linear-gradient(135deg, #FFF1F4, #FFE6D8);
+    border-left: 6px solid #F3A6B8;
+    border-radius: 16px;
+    padding: 24px 28px;
+    max-width: 1100px;
+    margin: 0 auto 30px auto;
+    box-shadow: 0 10px 25px rgba(243, 166, 184, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Cards & Stats */
+.panel-history {
+    border-radius: 15px !important;
+    overflow: hidden;
+    border: none !important;
+    box-shadow: 0 8px 20px rgba(90, 58, 50, 0.05);
+    background: #fff;
+}
+
+.panel-stat {
+    background: linear-gradient(145deg, #FFFFFF, #FFF3ED) !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(243, 166, 184, 0.2) !important;
+    box-shadow: 0 8px 20px rgba(154, 107, 99, 0.08) !important;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.panel-stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(243, 166, 184, 0.2) !important;
+}
+
+.stat-value { 
+    font-size: 24px; 
+    font-weight: 700; 
+    display: block; 
+    color: #7A3E34; 
+    margin-top: 5px; 
+}
+
+.stat-label { 
+    text-transform: uppercase; 
+    font-size: 10px; 
+    letter-spacing: 1.2px; 
+    font-weight: 600; 
+    color: #9A6B63; 
+}
+
+/* Button POS */
+.btn-pos {
+    background: linear-gradient(135deg, #F3A6B8, #E39AAE) !important;
+    color: #fff !important; 
+    border-radius: 15px !important;
+    padding: 20px !important; 
+    text-align: center; 
+    font-weight: 700;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    text-decoration: none; 
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(243, 166, 184, 0.3);
+    height: 120px;
+}
+
+.btn-pos:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 30px rgba(243, 166, 184, 0.4); 
+    filter: brightness(1.05);
+    text-decoration: none;
+}
+
+/* Table Section */
+.theme-dark {
+    background: linear-gradient(135deg, #E39AAE, #F3A6B8) !important;
+    color: #ffffff !important;
+    padding: 15px 20px;
+}
+
+.table thead th {
+    background-color: #FFF8F5 !important;
+    color: #9A6B63;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 15px !important;
+    border-bottom: 2px solid #FFE6D8 !important;
+}
+
+.table tbody td {
+    padding: 15px !important;
+    vertical-align: middle;
+}
+
+/* Badges & Text */
+.status-badge { 
+    background: #FFF1F4; 
+    color: #E39AAE; 
+    padding: 5px 15px; 
+    border-radius: 50px; 
+    font-size: 11px; 
+    font-weight: 700; 
+    display: inline-block;
+}
+
+.label-success {
+    background-color: #F3A6B8 !important;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 11px;
+}
+
+.invoice-text { 
+    color: #7A3E34; 
+    font-weight: 700; 
+}

@@ -1,0 +1,169 @@
+<style>
+    /* File: assets/css/tambah-transaksi-style.css 
+   Theme: The Lumora Co - Soft Pink Edition 
+*/
+
+body { 
+    background-color: #f7f3ee;
+    font-family: 'Inter', sans-serif;
+    color: #4b3b36;
+    margin: 0;
+    padding: 0;
+}
+
+.main-card {
+    background: #ffffff;
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+    margin: 50px auto;
+    overflow: hidden;
+}
+
+/* Header dengan warna Pink khas Lumora */
+.card-header {
+    background: #f6b7c5;
+    padding: 26px;
+    color: #ffffff;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h4 {
+    margin: 0;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.25rem;
+}
+
+.card-body {
+    padding: 40px;
+}
+
+/* Form Label Styling */
+.form-label {
+    font-weight: 600;
+    color: #8b5e5a;
+    margin-bottom: 8px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+}
+
+/* Input & Select Box */
+.form-control {
+    border-radius: 12px;
+    border: 1px solid #e8dcd7;
+    padding: 12px 15px;
+    height: 48px; /* Konsisten dengan tinggi select box */
+    transition: all 0.3s ease;
+    background-color: #fff;
+    width: 100%;
+    color: #4b3b36;
+}
+
+.form-control:focus {
+    border-color: #f2a7b5;
+    box-shadow: 0 0 0 3px rgba(242, 167, 181, 0.25);
+    outline: none;
+}
+
+/* Tombol Kembali (Putih-Pink) */
+.btn-back {
+    background-color: #ffffff;
+    color: #8b5e5a !important;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-back:hover {
+    background-color: #fce4ea;
+    color: #6f4742 !important;
+    transform: translateX(-3px);
+}
+
+/* Tombol Submit (Full Pink) */
+.btn-submit {
+    background: linear-gradient(135deg, #f2a7b5, #ec93a6);
+    color: #ffffff;
+    border: none;
+    padding: 16px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 15px;
+    width: 100%;
+    margin-top: 25px;
+    box-shadow: 0 6px 18px rgba(242, 167, 181, 0.45);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-submit:hover {
+    background: linear-gradient(135deg, #ec93a6, #e38499);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(242, 167, 181, 0.6);
+}
+
+/* Table Design dalam Form */
+.table-custom {
+    margin-top: 10px;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    width: 100%;
+}
+
+.table-custom thead th {
+    border: none;
+    color: #8b5e5a;
+    font-size: 12px;
+    font-weight: 600;
+    padding-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.table-custom tbody tr {
+    background-color: #fffaf8;
+}
+
+.table-custom tbody tr td {
+    border: none;
+    padding: 15px;
+    vertical-align: middle;
+}
+
+/* Border radius untuk baris tabel yang terpisah */
+.table-custom tbody tr td:first-child {
+    border-radius: 14px 0 0 14px;
+}
+
+.table-custom tbody tr td:last-child {
+    border-radius: 0 14px 14px 0;
+}
+
+/* Alert/Note Box */
+.alert-custom {
+    background-color: #fff1f4;
+    border-left: 5px solid #f2a7b5;
+    border-radius: 12px;
+    padding: 18px;
+    margin-top: 25px;
+    color: #7a4a46;
+    font-size: 14px;
+}
+
+hr {
+    margin: 35px 0;
+    border-top: 1px dashed #f3c6d0;
+}
+</style>

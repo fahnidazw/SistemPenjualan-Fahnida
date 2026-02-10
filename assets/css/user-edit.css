@@ -1,0 +1,114 @@
+/* File: user-edit-style.css
+    Theme: Soft Pastel Pink & Earth Tone 
+*/
+
+body {
+    background: #f7f3ee;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #4a4a4a;
+}
+
+/* Container agar layout tetap proporsional */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 50px;
+}
+
+/* Panel utama (Card) */
+.panel {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 14px 35px rgba(246, 183, 197, 0.25);
+    overflow: hidden;
+    background: #ffffff;
+    margin-bottom: 50px;
+}
+
+/* Bagian Header Panel */
+.panel-heading {
+    background: #f6b7c5;
+    padding: 22px;
+    border: none;
+}
+
+.panel-heading h4 {
+    margin: 0;
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+/* Bagian Body Panel */
+.panel-body {
+    padding: 30px;
+}
+
+/* Styling Label Input */
+.form-group label {
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #8b5e5a;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Styling Input & Form Control */
+.form-control {
+    border-radius: 12px;
+    border: 1px solid #e8dcd7;
+    padding: 12px 14px;
+    transition: all 0.3s ease;
+    width: 100%;
+    height: auto;
+}
+
+.form-control:focus {
+    border-color: #f2a7b5;
+    box-shadow: 0 0 0 3px rgba(242, 167, 181, 0.25);
+    outline: none;
+}
+
+/* Kotak khusus Status (Alert info style) */
+.alert-info {
+    background: #fff1f4;
+    border: none;
+    border-left: 5px solid #f2a7b5;
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-top: 20px;
+}
+
+.alert-info .form-control {
+    min-height: 44px;
+    background-color: #ffffff;
+}
+
+/* Tombol Simpan */
+.btn-primary {
+    background: #f2a7b5;
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 30px;
+    font-weight: 600;
+    box-shadow: 0 6px 18px rgba(242, 167, 181, 0.45);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background: #ec93a6;
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+}

@@ -7,77 +7,7 @@
     <script type="text/javascript" src="../assets/js/jquery.js"></script>
     <script type="text/javascript" src="../assets/js/bootstrap.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        body {
-            background: #F6F3EF;
-        }
-
-        .navbar {
-            background: transparent !important;
-            border: none !important;
-        }
-
-        .navbar.navbar-custom {
-            background: linear-gradient(
-                135deg,
-                #FFB6C1,
-                #FFD6A5,
-                #CDB4DB
-            ) !important;
-            border: none;
-            border-radius: 0;
-            padding: 16px 0;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.18);
-        }
-
-        .navbar-custom .navbar-brand {
-            color: #FFFFFF !important;
-            font-weight: 800;
-            letter-spacing: 1.6px;
-            font-size: 20px;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            text-shadow: 0 3px 8px rgba(0,0,0,0.3);
-        }
-
-        .navbar-custom .navbar-brand i {
-            color: #FFF2DC;
-        }
-
-        .navbar-custom .nav > li > a {
-            color: #FFFFFF !important;
-            font-size: 14px;
-            padding: 12px 20px;
-            border-radius: 12px;
-            font-weight: 600;
-            transition: 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            text-shadow: 0 2px 6px rgba(0,0,0,0.25);
-        }
-
-        .navbar-custom .nav > li > a:hover {
-            background: rgba(255,255,255,0.3) !important;
-            transform: translateY(-2px);
-        }
-
-        .navbar-custom .nav > li.active > a {
-            background: rgba(255,255,255,0.4) !important;
-            font-weight: 700;
-            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25);
-        }
-
-        .navbar-custom .navbar-text {
-            color: #FFFFFF;
-            margin-top: 13px;
-            font-weight: 600;
-            text-shadow: 0 2px 6px rgba(0,0,0,0.25);
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/header-style.css">
 </head>
 
 <body>

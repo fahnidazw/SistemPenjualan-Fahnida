@@ -1,0 +1,180 @@
+/* File: assets/css/invoice-style.css
+   Theme: The Lumora Co - Pink Aesthetic Invoice 
+*/
+
+body {
+    background: #f7f3ee;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #6b4b47;
+    margin: 0;
+    padding: 0;
+}
+
+/* === INVOICE CONTAINER === */
+.invoice-box {
+    background: #ffffff;
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 750px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(246, 183, 197, 0.3);
+    position: relative;
+    border: 1px solid #fceef1;
+}
+
+/* === HEADER SECTION === */
+.header {
+    background: linear-gradient(135deg, #f6b7c5, #f9d1d8);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 25px;
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header p {
+    margin: 6px 0 0;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+/* === TABLES === */
+.info-table {
+    margin-top: 20px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.info-table th {
+    width: 30%;
+    padding: 10px;
+    color: #d6899a;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none !important;
+}
+
+.info-table td {
+    padding: 10px;
+    border: none !important;
+    color: #5a3b33;
+}
+
+/* === STATUS BADGES === */
+.status-success,
+.status-failed {
+    font-size: 11px;
+    padding: 5px 15px;
+    border-radius: 25px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.status-success {
+    background: #c1e1c1;
+    color: #1b4d3e;
+}
+
+.status-failed {
+    background: #ffb3b3;
+    color: #7d0000;
+}
+
+/* === PRODUCT LIST TABLE === */
+.table {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.table thead th {
+    background: #fff1f4;
+    color: #d6899a;
+    font-size: 12px;
+    text-transform: uppercase;
+    border: none;
+    padding: 12px;
+    letter-spacing: 1px;
+}
+
+.table tbody td {
+    padding: 15px 12px;
+    border-top: 1px solid #fceef1;
+    vertical-align: middle;
+}
+
+/* === TOTAL BOX === */
+.total-box {
+    margin-top: 25px;
+    background: linear-gradient(to right, #ffffff, #fff1f4);
+    padding: 18px 25px;
+    border-radius: 15px;
+    text-align: right;
+    font-size: 18px;
+    font-weight: 800;
+    color: #c07484;
+    border: 1px dashed #f6b7c5;
+}
+
+/* === FOOTER === */
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 13px;
+    color: #bfa5a3;
+    font-style: italic;
+}
+
+/* === BUTTONS === */
+.btn-soft {
+    background: linear-gradient(135deg, #f6b7c5, #efa5b7);
+    border: none;
+    color: #ffffff !important;
+    border-radius: 30px;
+    padding: 10px 24px;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 5px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(246, 183, 197, 0.4);
+}
+
+.btn-soft:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #efa5b7, #e39aae);
+    box-shadow: 0 6px 15px rgba(246, 183, 197, 0.5);
+}
+
+/* === PRINT SETTINGS === */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    body {
+        background: #ffffff;
+    }
+    .invoice-box {
+        box-shadow: none;
+        margin: 0;
+        padding: 10px;
+        max-width: 100%;
+        border: none;
+    }
+    .header {
+        background: #f6b7c5 !important; /* Fallback for print without colors */
+        -webkit-print-color-adjust: exact;
+    }
+}

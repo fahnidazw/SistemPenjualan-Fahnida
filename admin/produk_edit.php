@@ -2,11 +2,11 @@
 	include 'header.php';
 ?>
 
-<link rel="stylesheet" href="../assets/css/theme-pink.css">
+<link rel="stylesheet" href="../assets/css/produk_edit.css">
 
 <div class="container">
 	<br><br><br>
-	<div class="col-md-5 col-md-offset-3">
+	<div class="col-md-5 col-md-offset-4">
 		<div class="panel">
 			<div class="panel-heading text-center">
 				<h4>Edit Produk</h4>
@@ -55,4 +55,4 @@
 	</div>
 </div>
 
-<?php include 'footer.php'; ?>
+<br><br><br><br>

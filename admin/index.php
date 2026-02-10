@@ -6,156 +6,25 @@ $id_kasir = $_SESSION['user_id'];
 $username_admin = $_SESSION['username'];
 ?>
 
-
-<style>
-    body {
-        background: linear-gradient(180deg, #FFF8F5, #F4EFEA);
-        font-family: 'Inter', 'Segoe UI', sans-serif;
-        color: #5A3A32;
-    }
-
-    .container {
-        width: 95%;
-        margin-top: 28px;
-    }
-
-    .welcome-bg {
-        background: linear-gradient(135deg, #FFF1F4, #FFE6D8);
-        border-left: 6px solid #F3A6B8;
-        border-radius: 18px;
-        padding: 26px 30px;
-        margin-bottom: 35px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: 0 14px 28px rgba(243,166,184,.25);
-    }
-
-    .welcome-bg h4 {
-        margin: 0;
-        font-weight: 700;
-    }
-
-    .welcome-bg small {
-        color: #9A6B63;
-        font-weight: 500;
-    }
-
-        .panel-stat {
-    background: linear-gradient(145deg, #FFFFFF, #FFF3ED);
-    border-radius: 18px;
-    box-shadow: 0 12px 26px rgba(243,166,184,.25);
-    transition: .35s ease;
-    min-height: 120px;
-    display: flex;
-    align-items: center;
-}
-
-        .panel-stat:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 36px rgba(243,166,184,.35);
-}
-
-        .panel-heading-stat {
-    padding: 22px;
-    width: 100%;
-}
-
-        .panel-heading-stat h1 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0;
-}
-        
-        .panel-heading-stat i {
-    font-size: 32px;
-    color: #E39AAE;
-}
-
-        .val-large {
-    font-size: 32px;
-    font-weight: 800;
-    color: #7A3E34;
-}
-
-        .val-small {
-    font-size: 22px;
-    font-weight: 800;
-    color: #7A3E34;
-}
-
-        .stat-label {
-    margin-top: 6px;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1.4px;
-    color: #9A6B63;
-    font-weight: 600;
-}
-
-        .panel-history {
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 16px 30px rgba(243,166,184,.25);
-    margin-bottom: 40px;
-}
-
-        .theme-dark {
-    background: linear-gradient(135deg, #E39AAE);
-    color: #fff;
-}
-
-        .table thead th {
-    background: #FFF1F4;
-    color: #7A4A42;
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 1px;
-    padding: 16px;
-    border-bottom: 2px solid #F2C2A3;
-}
-
-        .table tbody td {
-    padding: 15px;
-    vertical-align: middle;
-}
-
-        .table tbody tr:hover {
-    background: #FFF6F1;
-}
-
-        .invoice-text {
-    font-weight: 700;
-    color: #E39AAE;
-}
-
-        .label-success {
-    background: linear-gradient(135deg, #F5C6A8);
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-weight: 600;
-    color: #fff;
-}
-</style>
+<link rel="stylesheet" href="../assets/css/index_admin.css">
 
 
 <div class="container">
 
-        <div class="welcome-bg">
-            <div>
-                <h4 style="margin:0;font-weight:700;">
-                    Selamat Datang, <?= $username_admin; ?> ✨
-                </h4>
-                <small>
-                    Insights | <i class="fas fa-moon"></i> The Lumora Co
-                </small>
+<div class="welcome-bg">
+        <div>
+            <h4 style="margin:0;font-weight:700; color: #5A3A32;">
+                Have a good day, <?= $username_admin; ?> ✨
+            </h4>
+            <small style="color:#9A6B63;">
+                Welcome back to your dashboard
+            </small>
         </div>
 
-        <div>
-                <?= date('l, d M Y'); ?>
+        <div style="color:#9A6B63; font-weight:600;">
+            <i class="fa fa-calendar-alt"></i> <?= date('l, d M Y'); ?>
         </div>
-</div>
+    </div>
 
 <div class="row">
 
@@ -254,8 +123,8 @@ $username_admin = $_SESSION['username'];
                         <th>Invoice</th>
                         <th>Tanggal</th>
                         <th>Nama Barang</th>
-                        <th>Jumlah</th>
-                        <th>Total</th>
+                        <th class="text-center">Jumlah</th>
+                        <th class="text-center">Total</th>
                         <th>Cashier</th>
                         <th class="text-center">Status</th>
                     </tr>
@@ -277,17 +146,16 @@ $username_admin = $_SESSION['username'];
                         $no=1;
                             while($d=mysqli_fetch_array($data)){
                     ?>
-
                         <tr>
-                            <td class="text-center"><?= $no++; ?></td>
-                            <td class="invoice-text">INV-<?= $d['id_jual']; ?></td>
-                            <td><?= date('d M Y',strtotime($d['tgl_jual'])); ?></td>
+                            <td class="text-center" style="color: #9A6B63;"><?= $no++; ?></td>
+                            <td class="invoice-text">INV-<?php echo $d['id_jual']; ?></td>
+                            <td><?= date('d M Y', strtotime($d['tgl_jual'])); ?></td>
                             <td><?= $d['nama_barang']; ?></td>
                             <td class="text-center"><?= $d['jumlah']; ?></td>
-                            <td>Rp <?= number_format($d['total_akhir']); ?></td>
-                            <td><?= $d['user_nama']; ?></td>
+                            <td class="text-center" style="font-weight: 600; color: #5A3A32;">Rp <?= number_format($d['total_akhir'], 0, ',', '.'); ?></td>
+                            <td><i class="fa fa-user-circle" style="color:#F5C6A8;"></i> <?= $d['user_nama']; ?></td>
                             <td class="text-center">
-                                <span class="label label-success">SELESAI</span>
+                                <span class="status-badge">SELESAI</span>
                             </td>
                         </tr>
                     <?php 
